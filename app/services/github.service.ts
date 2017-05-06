@@ -1,10 +1,10 @@
-import { Injectable } from 'angular2/core'
-import { Http, Headers, RequestOptions } from 'angular2/http'
+// Angular
+import { Injectable } from 'angular2/core';
+import { Http, Headers, RequestOptions } from 'angular2/http';
 
 @Injectable()
 
-// Service Github
-
+// Github Service
 export class GithubService {
   private apiUrl = `https://api.github.com`;
 
@@ -14,7 +14,9 @@ export class GithubService {
     let { type, search } = obj;
     let searchUrl = `${this.apiUrl}/search/${type}?q=${search}`;
 
-    return this.http.get(searchUrl).toPromise().then(response => response.json()).catch(err => err);
+    return this.http.get(searchUrl)
+      .toPromise()
+      .then(response => response.json())
+      .catch(err => err);
   }
-
 }
