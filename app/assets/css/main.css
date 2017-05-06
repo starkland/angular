@@ -1,0 +1,26 @@
+a.router-link-active {
+  color: #FFFFFF;
+}
+
+a.router-link-active:hover {
+  background-color: #FFFFFF;
+  color: #363636 !important;
+}
+
+a.nav-item:hover {
+  color: #FFFFFF;
+}
+
+.nav {
+  background-color: #363636;
+  // border-bottom: 1px solid #CCCCCC;
+}
+
+.internal {
+  min-height: 330px;
+  height: auto;
+}
+
+footer .fa {
+  font-size: 16px !important;
+}
