@@ -3,11 +3,11 @@ import { Component } from 'angular2/core';
 import { Router, Params } from 'angular2/router';
 
 // Services
-import { GithubService } from '../services/github.service';
-import { UserService } from '../services/user.service';
+import { GithubService } from '../../services/github.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
-  templateUrl: 'app/views/home.html',
+  templateUrl: './app/components/home/view.html',
   providers: [
     GithubService,
     UserService

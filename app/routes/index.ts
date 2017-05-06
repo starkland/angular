@@ -2,7 +2,7 @@
 import { RouteDefinition } from 'angular2/router';
 
 // Components
-import { HomeComponent } from '../components/home.component';
+import { HomeComponent } from '../components/home/component';
 import { UserComponent } from '../components/user.component';
 
 export const RouteDefinitions: RouteDefinition[] = [
