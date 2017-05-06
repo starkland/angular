@@ -8,10 +8,8 @@ import { Component, Input } from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 import { HTTP_PROVIDERS } from 'angular2/http';
 
-// Components
-import { HomeComponent } from './home.component';
-import { UserComponent } from './user.component';
-import { ProdutoComponent } from './produto.component';
+// Routes
+import { RouteDefinitions } from '../routes/index';
 
 // Services
 import { UserService } from '../services/user.service';
@@ -26,24 +24,7 @@ import { UserService } from '../services/user.service';
     HTTP_PROVIDERS
   ]
 })
-@RouteConfig([
-  {
-    path: '/',
-    name:'Home',
-    component: HomeComponent,
-    useAsDefault: true
-  },
-  {
-    path: '/users/:username',
-    name:'User',
-    component: UserComponent
-  },
-  {
-    path: '/produtos',
-    name:'Produtos',
-    component: ProdutoComponent
-  }
-])
+@RouteConfig(RouteDefinitions)
 
 export class AppComponent {
 
