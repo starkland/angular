@@ -1,10 +1,19 @@
 <nav class="nav">
   <div class="nav-left">
-    <a class="nav-item">Angular 2</a>
+    <a
+      class="nav-item"
+      href="https://angular.io/"
+      target="_blank"
+      title="Go to Angular site">
+
+      <img
+        src="https://angular.io/resources/images/logos/standard/logo-nav@2x.png"
+        alt="Angular logo">
+    </a>
   </div>
 
   <div class="nav-center">
-    <a class="nav-item" target="_blank" href="https://github.com/thulioph/estudos/tree/master/angular2">
+    <a class="nav-item" target="_blank" href="https://github.com/starkland/angular">
       <span class="icon">
         <i class="fa fa-github"></i>
       </span>
@@ -17,22 +26,28 @@
     </a>
   </div>
 
-  <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
-  <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
-  <span class="nav-toggle">
+  <span
+    class="nav-toggle"
+    (click)="toggleNavbar()"
+    [ngClass]="{
+      'is-active': isOpen
+    }">
     <span></span>
     <span></span>
     <span></span>
   </span>
 
-  <!-- This "nav-menu" is hidden on mobile -->
-  <!-- Add the modifier "is-active" to display it on mobile -->
-  <div class="nav-right nav-menu">
-    <a class="nav-item" [routerLink]="['Home']">Home</a>
-    <!-- <a class="nav-item" [routerLink]="['Pessoas']">Pessoas</a> -->
+  <div
+    class="nav-right nav-menu"
+    [ngClass]="{
+      'is-active': isOpen
+    }">
+    <a
+      class="nav-item is-tab"
+      [routerLink]="['Home']">
+      Home
+    </a>
   </div>
 </nav>
 
-<main class="container">
-  <router-outlet></router-outlet>
-</main>
+<router-outlet></router-outlet>
