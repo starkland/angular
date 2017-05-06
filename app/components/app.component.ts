@@ -25,6 +25,11 @@ export class AppComponent {
 
   private id:number;
   private nome, email: string;
+  private isOpen: boolean = false;
 
   constructor(private _service: UserService) {}
+
+  toggleNavbar() {
+    this.isOpen = !this.isOpen;
+  }
 }
