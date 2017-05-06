@@ -1,10 +1,10 @@
-import { Injectable } from 'angular2/core'
-import { Http, Headers, RequestOptions } from 'angular2/http'
+// Angular
+import { Injectable } from 'angular2/core';
+import { Http, Headers, RequestOptions } from 'angular2/http';
 
 @Injectable()
 
-// Service User
-
+// User Service
 export class UserService {
   constructor(private http: Http) {}
 
