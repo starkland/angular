@@ -1,6 +1,8 @@
+// Angular
 import { Component } from 'angular2/core';
 import { Router, Params } from 'angular2/router';
 
+// Services
 import { GithubService } from '../services/github.service';
 import { UserService } from '../services/user.service';
 
@@ -15,7 +17,7 @@ import { UserService } from '../services/user.service';
 export class HomeComponent {
   private submitted: boolean = false;
   private repos: Array[];
-  private form = {}
+  private form = {};
   private isRepo = false;
   private error = {};
 

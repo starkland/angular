@@ -1,8 +1,3 @@
-//
-// Arquivo que contém o componente <my-app>
-// com um template básico
-//
-
 // Angular Core
 import { Component, Input } from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
