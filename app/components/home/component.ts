@@ -59,10 +59,12 @@ export class HomeComponent {
 
   viewMore(data: Object, isRepo: boolean) {
     if (isRepo) {
-      let url = '/repositories';
+      let url = `/repositories/${data.full_name}`;
     } else {
       let url = `/users/${data.login}`;
     }
+
+    console.warn(url);
 
     this._router.navigateByUrl(url);
   }
