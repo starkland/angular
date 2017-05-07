@@ -1,26 +1,15 @@
-## Estudos com Angular 2
+## How to use
 
-### npm install
-para instalar todas as dependências
+Install dependencies:
 
-### npm run start
-para iniciar a aplicação
+```bash
+$ npm install
+```
 
-## Changelog
+Start the application:
 
-Inicialmente esta aplicação possui
+```bash
+$ npm start
+```
 
-- Componentes
-- Rotas
-- Service
-
-## Links
-
-Os links que me auxiliaram até o momento foram:
-
-- https://angular.io/
-- http://aprendaangular2.online/
-- http://clubedosgeeks.com.br/programacao/angularjs/iniciando-com-angular-2
-- http://clubedosgeeks.com.br/programacao/angularjs/usando-rotas-em-angular-2
-- http://clubedosgeeks.com.br/programacao/angularjs/angular2-http-services
-- https://www.dev6.com/Angular-2-the-Component-Router-Pt2
+[MIT License](https://thulioph.mit-license.org) © Thulio Philipe
