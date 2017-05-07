@@ -6,7 +6,7 @@
       </h1>
 
       <h2 class="subtitle">
-        Search by user or repository.
+        Search by <b>user</b> or <b>repository</b>.
       </h2>
     </div>
   </div>
@@ -22,7 +22,7 @@
       <div class="control">
         <span class="select">
           <select [(ngModel)]="form.type" (change)="onChange($event.target.value)">
-            <option value="users" selected>User</option>
+            <option value="users">User</option>
             <option value="repositories">Repository</option>
           </select>
         </span>
@@ -32,7 +32,7 @@
         <input
           type="text"
           class="input"
-          placeholder="Faça sua pesquisa"
+          placeholder="Search here"
           [(ngModel)]="form.search">
       </div>
     </div>

@@ -25,7 +25,9 @@ export class HomeComponent {
     private _github: GithubService;
     private _user: UserService;
     private _router: Router;
-  ) {}
+  ) {
+    this.form.type = 'users';
+  }
 
   onSubmit() {
     this._github.search(this.form)
@@ -37,7 +39,7 @@ export class HomeComponent {
           this.repos = [];
           this.error = {
             status: true,
-            message: 'Não existe nada com o filtro passado.'
+            message: 'No data was found with this word.'
           }
         }
       });
