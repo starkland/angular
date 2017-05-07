@@ -50,6 +50,7 @@ export class HomeComponent {
     this.error = {};
 
     this.isRepo = false;
+    this.form.type = value;
 
     if (value !== 'users') {
       this.isRepo = true;
