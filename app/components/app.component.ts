@@ -11,7 +11,7 @@ import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'my-app',
-  templateUrl: 'app/views/index.html',
+  templateUrl: 'app/index.html',
   directives: [ ROUTER_DIRECTIVES ],
   providers: [
     ROUTER_PROVIDERS,
