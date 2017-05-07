@@ -1,0 +1,61 @@
+<nav class="nav">
+  <div class="nav-left">
+    <a
+      class="nav-item"
+      href="https://angular.io/"
+      target="_blank"
+      title="Go to Angular site">
+
+      <img
+        src="https://angular.io/resources/images/logos/standard/logo-nav@2x.png"
+        alt="Angular logo">
+    </a>
+  </div>
+
+  <div class="nav-center">
+    <a class="nav-item" target="_blank" href="https://github.com/starkland/angular">
+      <span class="icon">
+        <i class="fa fa-github"></i>
+      </span>
+    </a>
+
+    <a class="nav-item" target="_blank" href="https://twitter.com/thulioph_">
+      <span class="icon">
+        <i class="fa fa-twitter"></i>
+      </span>
+    </a>
+  </div>
+
+  <span
+    class="nav-toggle"
+    (click)="toggleNavbar()"
+    [ngClass]="{
+      'is-active': isOpen
+    }">
+    <span></span>
+    <span></span>
+    <span></span>
+  </span>
+
+  <div
+    class="nav-right nav-menu"
+    [ngClass]="{
+      'is-active': isOpen
+    }">
+    <a
+      class="nav-item is-tab"
+      [routerLink]="['Home']">
+      Home
+    </a>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>Made with <i class="fa fa-heart"></i> and <i class="fa fa-music"></i> by <a href="http://thulioph.com/">Thulio Philipe</a></p>
+    </div>
+  </div>
+</footer>

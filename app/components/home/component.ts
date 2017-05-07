@@ -1,11 +1,13 @@
+// Angular
 import { Component } from 'angular2/core';
 import { Router, Params } from 'angular2/router';
 
-import { GithubService } from '../services/github.service';
-import { UserService } from '../services/user.service';
+// Services
+import { GithubService } from '../../services/github.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
-  templateUrl: 'app/views/home.html',
+  templateUrl: './app/components/home/view.html',
   providers: [
     GithubService,
     UserService
@@ -15,7 +17,7 @@ import { UserService } from '../services/user.service';
 export class HomeComponent {
   private submitted: boolean = false;
   private repos: Array[];
-  private form = {}
+  private form = {};
   private isRepo = false;
   private error = {};
 
@@ -23,7 +25,9 @@ export class HomeComponent {
     private _github: GithubService;
     private _user: UserService;
     private _router: Router;
-  ) {}
+  ) {
+    this.form.type = 'users';
+  }
 
   onSubmit() {
     this._github.search(this.form)
@@ -35,7 +39,7 @@ export class HomeComponent {
           this.repos = [];
           this.error = {
             status: true,
-            message: 'Não existe nada com o filtro passado.'
+            message: 'No data was found with this word.'
           }
         }
       });
@@ -46,6 +50,7 @@ export class HomeComponent {
     this.error = {};
 
     this.isRepo = false;
+    this.form.type = value;
 
     if (value !== 'users') {
       this.isRepo = true;
@@ -54,10 +59,12 @@ export class HomeComponent {
 
   viewMore(data: Object, isRepo: boolean) {
     if (isRepo) {
-      let url = '/repositories';
+      let url = `/repositories/${data.full_name}`;
     } else {
       let url = `/users/${data.login}`;
     }
+
+    console.warn(url);
 
     this._router.navigateByUrl(url);
   }

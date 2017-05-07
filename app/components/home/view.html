@@ -1,0 +1,126 @@
+<section class="hero is-small is-primary is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Home
+      </h1>
+
+      <h2 class="subtitle">
+        Search by <b>user</b> or <b>repository</b>.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<br>
+
+<div class="container internal">
+  <form (ngSubmit)="onSubmit()">
+    <div class="control">
+      <label class="label">Search by:</label>
+
+      <div class="control">
+        <span class="select">
+          <select [(ngModel)]="form.type" (change)="onChange($event.target.value)">
+            <option value="users">User</option>
+            <option value="repositories">Repository</option>
+          </select>
+        </span>
+      </div>
+
+      <div class="control">
+        <input
+          type="text"
+          class="input"
+          placeholder="Search here"
+          [(ngModel)]="form.search">
+      </div>
+    </div>
+
+    <div class="control">
+      <button class="button is-primary" type="submit">Search</button>
+    </div>
+  </form>
+
+  <br>
+
+  <div *ngIf="error.status" class="notification is-info">
+    {{error.message}}
+  </div>
+
+  <!-- Table for repositories -->
+  <table class="table">
+    <thead>
+      <tr *ngIf="isRepo">
+        <th><abbr title="Project Title">Title</abbr></th>
+        <th><abbr title="Project URL">URL</abbr></th>
+        <th><abbr title="Project Owner">User</abbr></th>
+        <th><abbr title="Project Language">Language</abbr></th>
+        <th><abbr title=""></abbr></th>
+      </tr>
+
+      <tr *ngIf="!isRepo">
+        <th><abbr title="User image">Imagem</abbr></th>
+        <th><abbr title="User login">Login</abbr></th>
+        <th><abbr title="User score">Score</abbr></th>
+        <th><abbr title=""></abbr></th>
+      </tr>
+    </thead>
+
+    <tbody *ngIf="isRepo">
+      <tr *ngFor="#item of repos">
+        <td>{{item.name}}</td>
+
+        <td>
+          <a href="{{item.html_url}}" target="_blank">
+            {{item.html_url}}
+          </a>
+        </td>
+
+        <td>
+          <a href="{{item.owner.url}}" target="_blank">
+            @{{item.owner.login}}
+          </a>
+        </td>
+
+        <td>{{ item.language }}</td>
+
+        <td>
+          <button
+            class="button is-info"
+            (click)="viewMore(item, isRepo)">
+
+            info
+          </button>
+        </td>
+      </tr>
+    </tbody>
+
+    <tbody *ngIf="!isRepo">
+      <tr *ngFor="#item of repos">
+        <td>
+          <figure>
+            <img src="{{item.avatar_url}}" alt="{{item.login}}" width="40">
+          </figure>
+        </td>
+
+        <td>
+          <a href="{{item.html_url}}" target="_blank">
+            @{{item.login}}
+          </a>
+        </td>
+
+        <td>{{ item.score }}</td>
+
+        <td>
+          <button
+            class="button is-info"
+            (click)="viewMore(item, isRepo)">
+
+            info
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

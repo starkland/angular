@@ -1,10 +1,12 @@
+// Angular
 import { Component, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
 
-import { UserService } from '../services/user.service';
+// Services
+import { UserService } from '../../services/user.service';
 
 @Component({
-  templateUrl: 'app/views/user.html',
+  templateUrl: './app/components/user/view.html',
   providers: [
     UserService
   ]
